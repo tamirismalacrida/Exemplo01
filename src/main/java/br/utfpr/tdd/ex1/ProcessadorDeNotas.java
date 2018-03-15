@@ -15,6 +15,7 @@ public class ProcessadorDeNotas {
         leitor = new LeitorCSV();
         escritor = new EscritorCSV();
         avaliador = new Avaliador();
+        avaliador.setLimiteFaltas(20);
     }
     
     public void setEscritor(EscritorCSV escritor) {

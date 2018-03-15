@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
@@ -43,6 +42,7 @@ public class ProcessadorDeNotasTest {
         p.setAvaliador(avaliador);
         
         p.processar("./res/algumArq.csv", tempFolder.getAbsolutePath() + "/algumArqSaida.csv");        
+        
         verify(escritorMock).setArquivoSaida(tempFolder.getAbsolutePath() + "/algumArqSaida.csv");
         verify(escritorMock).escrever("1234", "aaa bbb", (6.0 + (10.0 + 5.0)/2.0)/2, "aprovado");
         verify(escritorMock).escrever("12345", "aaavv bbbvv", (1.0 + (10.0 + 5.0)/2.0 + 5.7)/3, "reprovado por nota e falta");
