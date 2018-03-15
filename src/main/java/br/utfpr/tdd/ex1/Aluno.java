@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author andreendo
  */
-class Aluno {
+public class Aluno {
     
     private List<Double> notasAtividadesPraticas = new ArrayList<>();
     private double notaProjeto, notaRAA = -1;

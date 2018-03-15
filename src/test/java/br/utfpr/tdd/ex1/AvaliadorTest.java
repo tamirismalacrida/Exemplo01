@@ -8,7 +8,7 @@ import static org.mockito.Mockito.*;
 
 /**
  *
- * @author utfpr
+ * @author andreendo
  */
 public class AvaliadorTest {
     
