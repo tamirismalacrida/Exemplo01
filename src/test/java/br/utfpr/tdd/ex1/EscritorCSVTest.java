@@ -21,7 +21,8 @@ public class EscritorCSVTest {
     @Test
     public void testEscrita() throws IOException {
         File tempFolder = folder.newFolder();
-        EscritorCSV escritor = new EscritorCSV(tempFolder.getAbsolutePath() + "/saida.csv");
+        EscritorCSV escritor = new EscritorCSV();
+        escritor.setArquivoSaida(tempFolder.getAbsolutePath() + "/saida.csv");
         escritor.escrever("1234", "Nome do aluno1", 7.555, "aprovado");
         escritor.escrever("12345", "Nome do aluno3", 1.43, "reprovado por falta");
         

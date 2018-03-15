@@ -16,20 +16,10 @@ import org.apache.commons.csv.CSVPrinter;
  */
 class EscritorCSV {
     CSVPrinter csvPrinter;
-    public EscritorCSV(String filePath) {
-        try {
-            BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath));
-
-            csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-                .withHeader("RA", "Nome", "NF", "Situacao"));
-            csvPrinter.flush();            
-        }
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-        
+    
+    public EscritorCSV() {
     }
-
+    
     void escrever(String ra, String nome, double notaFinal, String situacao) {
         try {
             Locale locale  = new Locale("en", "UK");
@@ -38,6 +28,19 @@ class EscritorCSV {
             df.applyPattern(".#");
             df.setRoundingMode(RoundingMode.DOWN);
             csvPrinter.printRecord(ra, nome, df.format(notaFinal), situacao);
+            csvPrinter.flush();            
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    void setArquivoSaida(String filePath) {
+        try {
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath));
+
+            csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
+                .withHeader("RA", "Nome", "NF", "Situacao"));
             csvPrinter.flush();            
         }
         catch(Exception e) {
