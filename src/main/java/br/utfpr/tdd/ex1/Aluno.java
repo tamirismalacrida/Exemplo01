@@ -11,9 +11,12 @@ public class Aluno {
     
     private List<Double> notasAtividadesPraticas = new ArrayList<>();
     private double notaProjeto, notaRAA = -1;
-    int faltas;
+    private int faltas;
+    private String ra, nome;
     
     public Aluno(String ra, String nome) {
+        this.ra = ra;
+        this.nome = nome;
     }
 
     public void addNotaAtividadePratica(double nota) {
@@ -53,6 +56,26 @@ public class Aluno {
 
     int getFaltas() {
         return faltas;
+    }
+
+    public String getRA() {
+        return ra;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getNumeroAtividadesPraticas() {
+        return notasAtividadesPraticas.size();
+    }
+
+    public double getNotaProjeto() {
+        return notaProjeto;
+    }
+
+    public double getNotaRAA() {
+        return notaRAA;
     }
     
 }
