@@ -46,7 +46,7 @@ class LeitorCSV {
         
             return alunos;
         } 
-        catch(IOException e){
+        catch(IOException|IllegalArgumentException e){
             String error = "ERROR READING FILE: " + e.getMessage();
             alunos.add(new Aluno(error, error));
             return alunos;
