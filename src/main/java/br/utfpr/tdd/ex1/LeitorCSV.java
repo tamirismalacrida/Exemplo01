@@ -18,9 +18,8 @@ class LeitorCSV {
 
     List<Aluno> getAlunosDe(String arqCsv) {
         ArrayList<Aluno> alunos = new ArrayList<>();
-        try {
-            Reader reader = Files.newBufferedReader(Paths.get(arqCsv));
-
+        try ( Reader reader = Files.newBufferedReader(Paths.get(arqCsv)) )
+        {
             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
                         .withFirstRecordAsHeader()
                         .withIgnoreHeaderCase()
