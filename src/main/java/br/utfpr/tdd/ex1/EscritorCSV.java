@@ -28,7 +28,7 @@ class EscritorCSV {
             csvPrinter.flush();            
         }
         catch(Exception e) {
-            e.printStackTrace();
+            java.util.logging.Logger.getLogger("Teste").info(e.toString());
         }
     }
 
@@ -41,7 +41,7 @@ class EscritorCSV {
             csvPrinter.flush();            
         }
         catch(Exception e) {
-            e.printStackTrace();
+            java.util.logging.Logger.getLogger("Teste").info(e.toString());
         }
     }
     
