@@ -73,11 +73,10 @@ public class AlunoTest {
     public void testNotaFinalMaximo6(){
         Aluno aluno = new Aluno("RA", "Tamiris");
         
+        aluno.setNotaProjeto(8.0);
         aluno.setNotaRAA(5.0);
-        aluno.setNotaProjeto(6.0);        
-        aluno.addNotaAtividadePratica(2.0);   
-       
-              
+        aluno.addNotaAtividadePratica(8.0);  
+                     
         double vNF = aluno.getNF();
         assertEquals(6.0, vNF, 1);
         
