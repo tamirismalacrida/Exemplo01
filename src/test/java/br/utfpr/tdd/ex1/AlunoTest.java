@@ -10,7 +10,7 @@ import static org.mockito.Mockito.*;
  */
 public class AlunoTest {
     
-    @Test
+    /*@Test
     public void testNotaAtividadesTresNotas() {
         Aluno aluno = new Aluno("RA", "Joao Da Silva");
         aluno.addNotaAtividadePratica(10.0);
@@ -67,5 +67,19 @@ public class AlunoTest {
         aluno.setNotaRAA(6.0);
         
         assertEquals((5.0 + 6.0 + mediaRAA) / 3.0, aluno.getNF(), 0.01);
-    }        
+    }     */
+    
+    @Test
+    public void testNotaFinalMaximo6(){
+        Aluno aluno = new Aluno("RA", "Tamiris");
+        
+        aluno.setNotaRAA(5.0);
+        aluno.setNotaProjeto(6.0);        
+        aluno.addNotaAtividadePratica(2.0);   
+       
+              
+        double vNF = aluno.getNF();
+        assertEquals(6.0, vNF, 1);
+        
+    }
 }
